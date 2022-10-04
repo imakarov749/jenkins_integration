@@ -1,6 +1,9 @@
+import sys
 import allure
 from allure_commons.types import Severity
-from model.pages import registration_form
+
+sys.path.append('C:\\Users\\ancor_makarov\\PycharmProjects\\jenkins_integration\\model\\pages')
+import registration_form
 
 
 # убрал фикстуры в этой версии теста, теперь браузер открывается и конфигурируется функцией

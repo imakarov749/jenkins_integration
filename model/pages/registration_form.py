@@ -1,10 +1,13 @@
+import sys
+
 import allure
 from selene import be, have
 import os
 from selene.support.conditions import be
 from selene.support.shared import browser
 
-from model.controls import dropdown, modal
+sys.path.append('C:\\Users\\ancor_makarov\\PycharmProjects\\jenkins_integration\\model\\controls')
+import dropdown, modal
 
 
 @allure.step('Выполняем предусловия для теста')
@@ -74,7 +77,7 @@ def set_subject(subject):
 
 @allure.step('Загружаем изображение')
 def upload_image():
-    file_path = os.path.abspath("../resources/photo_image.jpg")
+    file_path = os.path.abspath("./resources/photo_image.jpg")
     browser.element('#uploadPicture').send_keys(file_path)
 
 
