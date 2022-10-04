@@ -5,6 +5,8 @@ from model.pages import registration_form
 
 
 # убрал фикстуры в этой версии теста, теперь браузер открывается и конфигурируется функцией
+from utils import attach
+
 
 @allure.tag("web")
 @allure.severity(Severity.CRITICAL)

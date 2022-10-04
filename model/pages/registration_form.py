@@ -5,6 +5,7 @@ from selene.support.conditions import be
 from selene.support.shared import browser
 
 from model.controls import modal, dropdown
+from utils import attach
 
 
 @allure.step('Выполняем предусловия для теста')
@@ -109,3 +110,7 @@ def check_fields_in_submitting_window(data):
     rows = modal.dialog.all('tbody tr')
     for row, value in data:
         rows.element_by(have.text(row)).all('td')[1].should(have.exact_text(value))
+
+    attach.add_screenshot(browser)
+    attach.add_logs(browser)
+    attach.add_html(browser)
