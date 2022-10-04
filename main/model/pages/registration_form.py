@@ -4,8 +4,8 @@ import os
 from selene.support.conditions import be
 from selene.support.shared import browser
 
-from model.controls import modal, dropdown
-from utils import attach
+from main.model.controls import dropdown, modal
+from main.utils import attach
 
 
 @allure.step('Выполняем предусловия для теста')
