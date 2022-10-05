@@ -1,3 +1,4 @@
 pytest
 allure-pytest
 selene>=2.0.0b12
+selenium~=4.4.3
