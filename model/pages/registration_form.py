@@ -36,6 +36,9 @@ def opened_and_configure_browser():
 
     app.close_app()
 
+    yield
+    browser.close()
+
 
 @allure.step('Заполняем имя')
 def set_first_name(name):
