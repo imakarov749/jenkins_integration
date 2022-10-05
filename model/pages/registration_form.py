@@ -124,7 +124,7 @@ def check_open_submitting_window():
 @allure.step('Закрываем финальную форму')
 def close_submitting_window():
     browser.element('#closeLargeModal').click()
-    browser.close()
+    browser.quit()
 
 
 @allure.step('Проверяем точность заполнения полей в форме')
@@ -133,6 +133,7 @@ def check_fields_in_submitting_window(data):
     for row, value in data:
         rows.element_by(have.text(row)).all('td')[1].should(have.exact_text(value))
 
+def allure_attache():
     attach.add_screenshot(browser)
     attach.add_logs(browser)
     attach.add_html(browser)

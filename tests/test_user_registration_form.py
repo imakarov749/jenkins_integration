@@ -63,4 +63,6 @@ def test_fill_registration_form():
         ]
     )
 
+    registration_form.allure_attache()
+
     registration_form.close_submitting_window()
