@@ -10,7 +10,7 @@ from model.controls import modal, dropdown, app
 from utils import attach
 
 
-@allure.step('Выполняем предусловия для теста')
+@allure.step('Выполняем предусловия для теста и закрываем рекламу')
 def opened_and_configure_browser():
     options = Options()
     selenoid_capabilities = {
