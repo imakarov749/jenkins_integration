@@ -36,9 +36,6 @@ def opened_and_configure_browser():
 
     app.close_app()
 
-    yield
-    browser.close()
-
 
 @allure.step('Заполняем имя')
 def set_first_name(name):
@@ -125,6 +122,7 @@ def check_open_submitting_window():
 @allure.step('Закрываем финальную форму')
 def close_submitting_window():
     browser.element('#closeLargeModal').click()
+    browser.close()
 
 
 @allure.step('Проверяем точность заполнения полей в форме')
