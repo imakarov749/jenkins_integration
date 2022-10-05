@@ -1,12 +1,12 @@
 import allure
-from selene import be, have
+from selene import be, have, command
 import os
 from selene.support.conditions import be
 from selene.support.shared import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from model.controls import modal, dropdown, app
+from model.controls import modal, dropdown
 from utils import attach
 
 
@@ -34,7 +34,9 @@ def opened_and_configure_browser():
     browser.element('.main-header').should(be.visible)
     browser.driver.set_window_size(1920, 1080)
 
-    app.close_app()
+    ads = browser.all('[id^=google_ads_][id$=container__]')
+    if ads.wait.until(have.size_greater_than_or_equal(3)):
+        ads.perform(command.js.remove)
 
 
 @allure.step('Заполняем имя')
