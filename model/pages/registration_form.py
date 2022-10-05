@@ -1,4 +1,5 @@
 import allure
+from dotenv import load_dotenv
 from selene import be, have, command
 import os
 from selene.support.conditions import be
@@ -12,6 +13,8 @@ from utils import attach
 
 @allure.step('Выполняем предусловия для теста и закрываем рекламу')
 def opened_and_configure_browser():
+    load_dotenv()
+
     options = Options()
     selenoid_capabilities = {
         "browserName": "chrome",
@@ -22,8 +25,10 @@ def opened_and_configure_browser():
         }
     }
     options.capabilities.update(selenoid_capabilities)
+    login = os.getenv('LOGIN')
+    password = os.getenv('PASSWORD')
     driver = webdriver.Remote(
-        command_executor='https://user1:1234@selenoid.autotests.cloud/wd/hub',
+        command_executor=f'https://{login}:{password}@selenoid.autotests.cloud/wd/hub',
         options=options)
 
     browser.config.driver = driver
