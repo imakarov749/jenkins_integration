@@ -12,7 +12,7 @@ from model.pages import registration_form
 @allure.label('owner', 'imakarov749')
 @allure.feature('Регистрация пользователя в системе')
 @allure.story('Я, как пользователь, хочу иметь возможность регистрации на сайте')
-@allure.link('https://demoqa.com/automation-practice-form', name='Testing')
+@allure.link('https://github.com/imakarov749/jenkins_integration', name='GitHub project')
 def test_fill_registration_form():
     # GIVEN
 
