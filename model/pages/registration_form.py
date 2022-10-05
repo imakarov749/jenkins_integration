@@ -133,6 +133,7 @@ def check_fields_in_submitting_window(data):
     for row, value in data:
         rows.element_by(have.text(row)).all('td')[1].should(have.exact_text(value))
 
+
 def allure_attache():
     attach.add_screenshot(browser)
     attach.add_logs(browser)
