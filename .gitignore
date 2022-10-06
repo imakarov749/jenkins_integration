@@ -134,3 +134,7 @@ allure-results
 
 #idea
 .idea
+
+
+allure-report
+notifications/draft.txt
