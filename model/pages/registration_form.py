@@ -40,7 +40,7 @@ def opened_and_configure_browser():
     browser.driver.set_window_size(1920, 1080)
 
     ads = browser.all('[id^=google_ads_][id$=container__]')
-    if ads.wait.until(have.size_greater_than_or_equal(1)):
+    if ads.wait.until(have.size_less_than_or_equal(4)):
         ads.perform(command.js.remove)
 
 
