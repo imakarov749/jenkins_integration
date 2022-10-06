@@ -9,6 +9,8 @@ from selenium.webdriver.chrome.options import Options
 
 from model.controls import modal, dropdown
 from utils import attach
+
+
 # test
 
 @allure.step('Выполняем предусловия для теста и закрываем рекламу')
