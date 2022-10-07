@@ -21,28 +21,17 @@ def test_fill_registration_form():
     # WHEN
 
     registration_form.set_first_name('Ivan')
-
     registration_form.set_last_name('Ivanov')
-
     registration_form.set_email('ivan.ivanov@kljh.com')
-
     registration_form.choose_gender()
-
     registration_form.set_phone_number('7123456789')
-
     registration_form.choose_birth_date_from_calendar()
-
     registration_form.choose_hobbies()
-
     registration_form.set_address('Moscow')
-
     registration_form.set_subject('Math')
-
     registration_form.upload_image()
-
     registration_form.choose_state('Uttar Pradesh')
     registration_form.choose_city('Lucknow')
-
     registration_form.click_submitting_button()
     registration_form.check_open_submitting_window()
 
@@ -64,5 +53,4 @@ def test_fill_registration_form():
     )
 
     registration_form.allure_attache()
-
     registration_form.close_submitting_window()
